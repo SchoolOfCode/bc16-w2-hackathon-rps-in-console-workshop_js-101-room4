@@ -1,3 +1,33 @@
+let userWins = false;
+let computerWins = false;
+let draw = false;
+
+
+function getScore(userMove, computerMove){
+    if (
+        (userMove=="rock" && computerMove=="scissors") ||
+        (userMove=="scissors" && computerMove=="paper") ||
+        (userMove=="paper" && computerMove=="rock") 
+    ) {
+        console.log("user wins");
+        userWins = true;
+    }
+    else if (
+        (userMove=="rock" && computerMove=="paper") ||
+        (userMove=="scissors" && computerMove=="rock") ||
+        (userMove=="paper" && computerMove=="scissors") 
+    ) {
+        console.log("computer wins");
+        computerWins = true;
+    }
+    else {
+        console.log("its a draw");
+        draw = true;
+    }
+}
+
+
+
 function makeMove(){
     // Prompt user for move and store that input
     let userMove = prompt('Pick your move between Rock, Paper, and Scissors');
@@ -20,38 +50,24 @@ function makeMove(){
     else{
         computerMove = 'scissors';
     }
+
+    console.log(userMove, computerMove);
+
+    return (userMove, computerMove); 
+
 }
 
 makeMove();
 
-let userWins = false;
-let computerWins = false;
-let draw = false;
+// for use later: return getScore(userMove, computerMove);
 
+function concludeGame() {
 
-function getScore(playerMove, computerMove){
-    if (
-        (userMove=="rock" && computerMove=="scissors") ||
-        (userMove=="scissors" && computerMove=="paper") ||
-        (userMove=="paper" && computerMove=="rock") 
-    ) {
-        console.log("user wins");
-        userWins = true;
-    }
-    else if (
-        (userMove=="rock" && computerMove=="paper") ||
-        (userMove=="scissors" && computerMove=="rock") ||
-        (userMove=="paper" && computerMove=="scissors") 
-    ) {
-        console.log("computer wins");
-        computerWins = true;
-    }
-    else (
-        (userMove=="rock" && computerMove=="rock") ||
-        (userMove=="scissors" && computerMove=="scissors") ||
-        (userMove=="paper" && computerMove=="paper") 
-    ) {
-        console.log("its a draw");
-        draw = true;
+    if (userWins) {
+        alert ("You won!");
+    } else if (computerWins) {
+        alert("You lost!");
+    } else {
+        alert ("It's a draw!");
     }
 }
