@@ -3,31 +3,6 @@ let computerWins = false;
 let draw = false;
 
 
-function getScore(userMove, computerMove){
-    if (
-        (userMove=="rock" && computerMove=="scissors") ||
-        (userMove=="scissors" && computerMove=="paper") ||
-        (userMove=="paper" && computerMove=="rock") 
-    ) {
-        console.log("user wins");
-        userWins = true;
-    }
-    else if (
-        (userMove=="rock" && computerMove=="paper") ||
-        (userMove=="scissors" && computerMove=="rock") ||
-        (userMove=="paper" && computerMove=="scissors") 
-    ) {
-        console.log("computer wins");
-        computerWins = true;
-    }
-    else {
-        console.log("its a draw");
-        draw = true;
-    }
-}
-
-
-
 function makeMove(){
     // Prompt user for move and store that input
     let userMove = prompt('Pick your move between Rock, Paper, and Scissors');
@@ -51,23 +26,50 @@ function makeMove(){
         computerMove = 'scissors';
     }
 
-    console.log(userMove, computerMove);
-
-    return (userMove, computerMove); 
+    console.log(userMove, computerMove)
+    return userMove, computerMove; 
 
 }
 
-makeMove();
 
-// for use later: return getScore(userMove, computerMove);
+function getScore(userMove, computerMove){
+    console.log(userMove, computerMove)
+    if (
+        (userMove=="rock" && computerMove=="scissors") ||
+        (userMove=="scissors" && computerMove=="paper") ||
+        (userMove=="paper" && computerMove=="rock") 
+    ) {
+        console.log("user wins");
+        userWins = true;
+    }
+    else if (
+        (userMove=="rock" && computerMove=="paper") ||
+        (userMove=="scissors" && computerMove=="rock") ||
+        (userMove=="paper" && computerMove=="scissors") 
+    ) {
+        console.log("computer wins");
+        computerWins = true;
+    }
+    else {
+        console.log("its a draw");
+        draw = true;
+    }
+}
 
 function concludeGame() {
 
-    if (userWins) {
+    if (userWins) 
+    {
         alert ("You won!");
-    } else if (computerWins) {
+    } 
+    else if (computerWins) {
         alert("You lost!");
-    } else {
+    } 
+    else {
         alert ("It's a draw!");
     }
 }
+
+let userMove, computerMove = makeMove()
+getScore(userMove, computerMove)
+concludeGame()
