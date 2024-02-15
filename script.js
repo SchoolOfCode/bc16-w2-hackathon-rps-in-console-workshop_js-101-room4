@@ -2,6 +2,9 @@ let userWins = false;
 let computerWins = false;
 let draw = false;
 
+let userMoveString = '';
+let computerMoveString = '';
+
 
 function makeMove(){
     // Prompt user for move and store that input
@@ -25,21 +28,17 @@ function makeMove(){
     else{
         computerMove = 'scissors';
     }
-
-    console.log(userMove, computerMove)
-    return userMove, computerMove; 
-
+    userMoveString = userMove
+    computerMoveString = computerMove
 }
 
 
 function getScore(userMove, computerMove){
-    console.log(userMove, computerMove)
     if (
         (userMove=="rock" && computerMove=="scissors") ||
         (userMove=="scissors" && computerMove=="paper") ||
         (userMove=="paper" && computerMove=="rock") 
     ) {
-        console.log("user wins");
         userWins = true;
     }
     else if (
@@ -47,11 +46,9 @@ function getScore(userMove, computerMove){
         (userMove=="scissors" && computerMove=="rock") ||
         (userMove=="paper" && computerMove=="scissors") 
     ) {
-        console.log("computer wins");
         computerWins = true;
     }
     else {
-        console.log("its a draw");
         draw = true;
     }
 }
@@ -60,16 +57,16 @@ function concludeGame() {
 
     if (userWins) 
     {
-        alert ("You won!");
+        alert (`You won! You picked ${userMoveString} and the computer picked ${computerMoveString}.`);
     } 
     else if (computerWins) {
-        alert("You lost!");
+        alert(`You lost! You picked ${userMoveString} and the computer picked ${computerMoveString}.`);
     } 
     else {
-        alert ("It's a draw!");
+        alert (`It's a draw! You picked ${userMoveString} and the computer picked ${computerMoveString}.`);
     }
 }
 
-let userMove, computerMove = makeMove()
-getScore(userMove, computerMove)
+makeMove()
+getScore(userMoveString, computerMoveString)
 concludeGame()
