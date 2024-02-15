@@ -1,19 +1,19 @@
-Task 0 - Make a plan 
+TASK 0 - Make a plan 
 
 MVP = A functioning Game
 
-Create infrastructure [html & css(not in MVP)]
+TASK 1: Create infrastructure [html & css(not in MVP)]
 
 [Function to start the game] - not in MVP
 
-Function to make a move 
+TASK 2: Function to make a move 
 
 1. Prompt user for move 
 2. Store that input 
 3. Get computer to make random move 
 4. Store computer move
 
-Function to get score 
+TASK 3: Function to get score 
 
 1. Compare move of to make a move function
 2. Output: Computer wins or player wins or a draw 
@@ -30,7 +30,7 @@ userPaper && computerRock = User wins
 userPaper && computerScissors = Computer wins
 userPaper && computerPaper = Draw 
 
-Function to end game 
+TASK 4: Function to end game 
 
 1. Read game output and log corresponding message [message varies based on result]
 2. Prompt would you like to play again 
