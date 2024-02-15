@@ -1,0 +1,44 @@
+Task 0 - Make a plan 
+
+MVP = A functioning Game
+
+Create infrastructure [html & css(not in MVP)]
+
+[Function to start the game] - not in MVP
+
+Function to make a move 
+
+1. Prompt user for move 
+2. Store that input 
+3. Get computer to make random move 
+4. Store computer move
+
+Function to get score 
+
+1. Compare move of to make a move function
+2. Output: Computer wins or player wins or a draw 
+
+userRock && computerScissors = User wins
+userRock && computerPaper = Computer wins 
+userRock && computerRock = Draw 
+
+userScissors && computerPaper = User wins 
+userScissors && computerRock = Computer wins
+userScissors && computerScissors = Draw 
+
+userPaper && computerRock = User wins 
+userPaper && computerScissors = Computer wins
+userPaper && computerPaper = Draw 
+
+Function to end game 
+
+1. Read game output and log corresponding message [message varies based on result]
+2. Prompt would you like to play again 
+
+If answer if yes - repeat game function 
+[If not - alert game is finished] - not MVP
+
+
+
+
+
