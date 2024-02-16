@@ -65,6 +65,11 @@ function concludeGame() {
     else {
         alert (`It's a draw! You picked ${userMoveString} and the computer picked ${computerMoveString}.`);
     }
+
+   let playAgain =  confirm("Would you like to play again?"); 
+   if (playAgain) {
+    
+   }
 }
 
 makeMove()

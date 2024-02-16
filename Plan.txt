@@ -40,5 +40,25 @@ If answer if yes - repeat game function
 
 
 
+Reflections after MVP 1 
+
+- Each person being the driver. Pair programming. 
+- Creating a plan was super useful to see the game flow to then create the code.
+- Alex, who has more background knowledge, helps to explain processes and it helps uplift us. No one gets left behind ❤️
+- Great teamwork & asking the right questions. 
+- Breaking the ice is very important - adapting to new teams.
+
+MVP 2 = Looping Game 
+
+TASK 5: Replaying the game 
+
+- Would you like to play again option 
+- User inputs answer 
+- Game starts again 
 
 
+
+MVP 3 = Score 
+
+
+MVP 4 = User's Name
