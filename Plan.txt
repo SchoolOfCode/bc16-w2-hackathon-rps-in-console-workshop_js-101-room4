@@ -67,7 +67,15 @@ This will be deemed as complete when this information is displayed after each ro
 - Input variables into conclude game function
 - Update 4 variables when the game concludes 
 - After user completes game, display score 
+- DO NOT RESET THESE WHEN LOOPING
 
 MVP 4 = User's Name
 
-MVP 5 = Display score the whole time
+- Ask user for their name and store as variable
+- Call this variable when needed and do not reset
+- DO NOT RESET THIS WHEN LOOPING
+
+MVP 5 = Alternate mode - impossible
+
+- Make computer win every time
+- Computer move is dependent on user move

@@ -10,10 +10,17 @@ let winNumber = 0;
 let lostNumber = 0;
 let drawNumber = 0;
 
+let userNameString = '';
+
+function askName(){
+    // Ask user for their name and store that input
+    let userName = prompt("Hi, let's play rock, paper, scissors! What is your name?");
+    userNameString = userName
+}
 
 function makeMove(){
     // Prompt user for move and store that input
-    let userMove = prompt('Pick your move between Rock, Paper, and Scissors');
+    let userMove = prompt(`Hi ${userNameString}! Pick your move between Rock, Paper, and Scissors`);
     userMove = userMove.toLowerCase();
     // Check input is rock, paper, or scissors, and restart if not
     if((userMove != 'rock') && (userMove != 'paper') && (userMove != 'scissors')){
@@ -33,12 +40,14 @@ function makeMove(){
     else{
         computerMove = 'scissors';
     }
+    // Update variables so that other functions can call them
     userMoveString = userMove
     computerMoveString = computerMove
 }
 
 
 function getScore(userMove, computerMove){
+    // Check the relationship between userMove and computerMove and update the result variables accordingly 
     if (
         (userMove=="rock" && computerMove=="scissors") ||
         (userMove=="scissors" && computerMove=="paper") ||
@@ -59,33 +68,41 @@ function getScore(userMove, computerMove){
 }
 
 function concludeGame() {
+    // add one to game number
 
     gameNumber ++ 
+
+    // check result variables and update game counters and alert the user accordingly
 
     if (userWins) 
     {
         winNumber ++
-        alert (`You won! You picked ${userMoveString} and the computer picked ${computerMoveString}.`);
+        alert (`Well done ${userNameString}, you won! You picked ${userMoveString} and the computer picked ${computerMoveString}.`);
     } 
     else if (computerWins) {
         lostNumber ++
-        alert(`You lost! You picked ${userMoveString} and the computer picked ${computerMoveString}.`);
+        alert(`Unlucky ${userNameString}, you lost! You picked ${userMoveString} and the computer picked ${computerMoveString}.`);
     } 
     else {
         drawNumber ++
-        alert (`It's a draw! You picked ${userMoveString} and the computer picked ${computerMoveString}.`);
+        alert (`Close one ${userNameString}, it's a draw! You picked ${userMoveString} and the computer picked ${computerMoveString}.`);
     }
 
-   let playAgain =  confirm(`You have played ${gameNumber} games, you have won ${winNumber}, lost ${lostNumber} and drawn ${drawNumber}. 
+    // alert user of the scores and ask if they want to play again
+
+   let playAgain =  confirm(`${userNameString}, you have played ${gameNumber} game(s), you have won ${winNumber}, lost ${lostNumber}, and drawn ${drawNumber}. 
                             Would you like to play again?`); 
+
+    // if they want to play again, execute the game function again, if not thank them and the function ends
    if (playAgain) {
         playGame()
    }
    else{
-        alert('Thank you for playing')
+        alert(`Thank you for playing ${userNameString}!`)
    }
 }
 
+// links all game functions under one function to allow the game to loop, all variables apart from score tracker are reset to zero
 
 function playGame(){
     userWins = false;
@@ -101,4 +118,5 @@ function playGame(){
 
 }
 
+askName()
 playGame()
