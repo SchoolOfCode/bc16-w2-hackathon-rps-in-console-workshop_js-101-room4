@@ -27,18 +27,17 @@ function makeMove(){
         alert('You did not type in Rock, Paper, or Scissors, please try again!')
         makeMove()
     }
-    // Get computer to make random move
-    let computerNumber = (Math.floor(Math.random()*3));
-    // Store computer move
+  
+    // Get computer to make move based on user move
     let computerMove = '';
-    if (computerNumber == 0){
-        computerMove = 'rock';
-    }
-    else if (computerNumber == 1){
+    if (userMove == 'rock'){
         computerMove = 'paper';
     }
-    else{
+    else if (userMove == 'paper'){
         computerMove = 'scissors';
+    }
+    else{
+        computerMove = 'rock';
     }
     // Update variables so that other functions can call them
     userMoveString = userMove
