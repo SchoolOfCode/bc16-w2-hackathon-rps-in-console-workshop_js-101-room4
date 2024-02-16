@@ -5,7 +5,6 @@ let draw = false;
 let userMoveString = '';
 let computerMoveString = '';
 
-
 function makeMove(){
     // Prompt user for move and store that input
     let userMove = prompt('Pick your move between Rock, Paper, and Scissors');
@@ -68,10 +67,26 @@ function concludeGame() {
 
    let playAgain =  confirm("Would you like to play again?"); 
    if (playAgain) {
-    
+        playGame()
+   }
+   else{
+        alert('Thank you for playing')
    }
 }
 
-makeMove()
-getScore(userMoveString, computerMoveString)
-concludeGame()
+
+function playGame(){
+    userWins = false;
+    computerWins = false;
+    draw = false;
+
+    userMoveString = '';
+    computerMoveString = '';
+
+    makeMove()
+    getScore(userMoveString, computerMoveString)
+    concludeGame()
+
+}
+
+playGame()
