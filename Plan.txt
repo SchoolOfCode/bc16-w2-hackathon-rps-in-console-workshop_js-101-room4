@@ -57,8 +57,17 @@ TASK 5: Replaying the game
 - Game starts again 
 
 
-
 MVP 3 = Score 
 
+Ref: Keep track of how many games have been played, as well as the number of wins, losses, and draws.
+
+This will be deemed as complete when this information is displayed after each round. 
+
+- Create 4 variables relating to score outside functions 
+- Input variables into conclude game function
+- Update 4 variables when the game concludes 
+- After user completes game, display score 
 
 MVP 4 = User's Name
+
+MVP 5 = Display score the whole time
