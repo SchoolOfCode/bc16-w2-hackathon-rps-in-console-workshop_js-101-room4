@@ -5,6 +5,12 @@ let draw = false;
 let userMoveString = '';
 let computerMoveString = '';
 
+let gameNumber = 0;
+let winNumber = 0;
+let lostNumber = 0;
+let drawNumber = 0;
+
+
 function makeMove(){
     // Prompt user for move and store that input
     let userMove = prompt('Pick your move between Rock, Paper, and Scissors');
@@ -54,18 +60,24 @@ function getScore(userMove, computerMove){
 
 function concludeGame() {
 
+    gameNumber ++ 
+
     if (userWins) 
     {
+        winNumber ++
         alert (`You won! You picked ${userMoveString} and the computer picked ${computerMoveString}.`);
     } 
     else if (computerWins) {
+        lostNumber ++
         alert(`You lost! You picked ${userMoveString} and the computer picked ${computerMoveString}.`);
     } 
     else {
+        drawNumber ++
         alert (`It's a draw! You picked ${userMoveString} and the computer picked ${computerMoveString}.`);
     }
 
-   let playAgain =  confirm("Would you like to play again?"); 
+   let playAgain =  confirm(`You have played ${gameNumber} games, you have won ${winNumber}, lost ${lostNumber} and drawn ${drawNumber}. 
+                            Would you like to play again?`); 
    if (playAgain) {
         playGame()
    }
